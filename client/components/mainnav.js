@@ -5,7 +5,7 @@ class MainNav extends Component {
     return (
       <nav className="nav navbar-default">
         <ul className="nav nav-tabs nav-justified">
-          <li>
+          <li className="active">
             <a>Dashboard</a>
           </li>
           <li>

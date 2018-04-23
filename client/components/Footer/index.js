@@ -1,6 +1,5 @@
 import React from 'react';
 
-import logo from './assets/logo.svg';
 import './index.css';
 
 const Footer = () => (
@@ -10,13 +9,7 @@ const Footer = () => (
       href="https://developers.coinbase.com/api/v2"
       target="_blank"
       rel="noopener noreferrer"
-    >
-      <img
-        src={logo}
-        className="logo"
-        alt="coinbase"
-      />
-    </a>
+    />
   </div>
 );
 

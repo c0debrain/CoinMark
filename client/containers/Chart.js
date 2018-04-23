@@ -12,7 +12,7 @@ import { fetchPriceHistory, fetchSpotPrices } from '../api';
 import { CRYPTOCURRENCY, DURATION, POLL_FREQUENCY } from '../constants';
 import { formatCurrency } from '../utils';
 
-import './App.css';
+import './Chart.css';
 
 // `Object.values` polyfill for IE (since it's not supported by CRA)
 const CRYPTOCURRENCY_LIST = Object.keys(CRYPTOCURRENCY).map(
@@ -29,7 +29,7 @@ const INITIAL_STATE = {
   spotPrices: []
 };
 
-class App extends Component {
+class Chart extends Component {
   constructor(props) {
     super(props);
     this.state = INITIAL_STATE;
@@ -217,7 +217,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="Chart">
         {this.renderHelmet()}
         <div className="dashboard">
           <div className="tabs">
@@ -227,10 +227,9 @@ class App extends Component {
           {this.renderPriceTable()}
           {this.renderPriceHistoryChart()}
         </div>
-        <Footer />
       </div>
     );
   }
 }
 
-export default App;
+export default Chart;

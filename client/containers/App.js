@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
-import Footer from '../components/Footer/index';
-import HorizontalChartAxis from '../components/HorizontalChartAxis/index';
-import PriceChart from '../components/PriceChart/index';
-import PriceTable from '../components/PriceTable/index';
-import Tabs from '../components/Tabs/index';
-import VerticalChartAxis from '../components/VerticalChartAxis/index';
+import Footer from '../components/Footer';
+import HorizontalChartAxis from '../components/HorizontalChartAxis';
+import PriceChart from '../components/PriceChart';
+import PriceTable from '../components/PriceTable';
+import Tabs from '../components/Tabs';
+import VerticalChartAxis from '../components/VerticalChartAxis';
 
-import { fetchPriceHistory, fetchSpotPrices } from '../api/index';
-import { CRYPTOCURRENCY, DURATION, POLL_FREQUENCY } from '../constants/index';
-import { formatCurrency } from '../utils/index';
+import { fetchPriceHistory, fetchSpotPrices } from '../api';
+import { CRYPTOCURRENCY, DURATION, POLL_FREQUENCY } from '../constants';
+import { formatCurrency } from '../utils';
 
 import './App.css';
 

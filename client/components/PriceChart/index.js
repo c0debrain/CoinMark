@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { extent } from 'd3-array';
 import { scaleLinear } from 'd3-scale';
 
-import Chart from './components/Chart/index';
-import Cursor from './components/Cursor/index';
-import HoverContainer from './components/HoverContainer/index';
+import Chart from './components/Chart/';
+import Cursor from './components/Cursor/';
+import HoverContainer from './components/HoverContainer/';
 
-import { formatCurrency } from '../../utils/index';
+import { formatCurrency } from '../../utils/';
 import './index.css';
 
 const ACTIVE_CURRENCY = 'usd';

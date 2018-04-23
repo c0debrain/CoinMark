@@ -1,7 +1,7 @@
 #/usr/bin/env bash
 # Fetch price data from Coinbase's API
 # Save the results as .json files into a directory provided in the first argument ($1)
-DATA_DIR=${1-"./priceData"}
+DATA_DIR=${1-"../priceData"}
 
 # Create directory if it doesn't exist
 if [ ! -d $DATA_DIR ]; then

@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import Chart from '../../containers/Chart';
 
+import './index.css';
+
 class MiniNav extends Component {
   render() {
     return (
       <div>
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
           <li class="nav-item">
             <a
               class="nav-link active"
-              id="home-tab"
+              id="dashboard-tab"
               data-toggle="tab"
-              href="#home"
+              href="#dashboard"
               role="tab"
-              aria-controls="home"
+              aria-controls="dashboard"
               aria-selected="true"
             >
               Dashboard
@@ -35,11 +37,11 @@ class MiniNav extends Component {
           <li class="nav-item">
             <a
               class="nav-link"
-              id="contact-tab"
+              id="Wallet-tab"
               data-toggle="tab"
-              href="#contact"
+              href="#Wallet"
               role="tab"
-              aria-controls="contact"
+              aria-controls="Wallet"
               aria-selected="false"
             >
               Wallet
@@ -49,11 +51,13 @@ class MiniNav extends Component {
         <div class="tab-content" id="myTabContent">
           <div
             class="tab-pane fade show active"
-            id="home"
+            id="dashboard"
             role="tabpanel"
-            aria-labelledby="home-tab"
+            aria-labelledby="dashboard-tab"
           >
-            <Chart />
+            <div className="chartPadding">
+              <Chart />
+            </div>
           </div>
           <div
             class="tab-pane fade"
@@ -65,9 +69,9 @@ class MiniNav extends Component {
           </div>
           <div
             class="tab-pane fade"
-            id="contact"
+            id="Wallet"
             role="tabpanel"
-            aria-labelledby="contact-tab"
+            aria-labelledby="Wallet-tab"
           >
             ...
           </div>

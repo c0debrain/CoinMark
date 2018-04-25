@@ -7,73 +7,45 @@ class MiniNav extends Component {
   render() {
     return (
       <div>
-        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a
-              class="nav-link active"
-              id="dashboard-tab"
-              data-toggle="tab"
-              href="#dashboard"
-              role="tab"
-              aria-controls="dashboard"
-              aria-selected="true"
-            >
-              Dashboard
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              id="profile-tab"
-              data-toggle="tab"
-              href="#profile"
-              role="tab"
-              aria-controls="profile"
-              aria-selected="false"
-            >
-              Buy/Sell
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              id="Wallet-tab"
-              data-toggle="tab"
-              href="#Wallet"
-              role="tab"
-              aria-controls="Wallet"
-              aria-selected="false"
-            >
-              Wallet
-            </a>
-          </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-          <div
-            class="tab-pane fade show active"
-            id="dashboard"
-            role="tabpanel"
-            aria-labelledby="dashboard-tab"
-          >
-            <div className="chartPadding">
-              <Chart />
+        <div className="container">
+          <ul className="nav nav-tabs">
+            <li className="active">
+              <a data-toggle="tab" href="#dashboard">
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a data-toggle="tab" href="#buysell">
+                Buy/Sell
+              </a>
+            </li>
+            <li>
+              <a data-toggle="tab" href="#wallet">
+                Wallet
+              </a>
+            </li>
+          </ul>
+
+          <div className="tab-content">
+            <div id="dashboard" class="tab-pane fade in active">
+              <p className="chartPadding">
+                <Chart />
+              </p>
             </div>
-          </div>
-          <div
-            class="tab-pane fade"
-            id="profile"
-            role="tabpanel"
-            aria-labelledby="profile-tab"
-          >
-            ...
-          </div>
-          <div
-            class="tab-pane fade"
-            id="Wallet"
-            role="tabpanel"
-            aria-labelledby="Wallet-tab"
-          >
-            ...
+            <div id="buysell" className="tab-pane fade">
+              <h3>Menu 2</h3>
+              <p>
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+            <div id="wallet" className="tab-pane fade">
+              <h3>Menu 3</h3>
+              <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam.
+              </p>
+            </div>
           </div>
         </div>
       </div>

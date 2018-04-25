@@ -10,6 +10,9 @@ export default () => {
   return (
     <div>
       <Header />
+      <br />
+      <br />
+      <br />
       <MiniNav />
     </div>
   );

@@ -170,11 +170,9 @@ class Chart extends Component {
 
   render() {
     return (
-      <div className="Chart">
-        <div className="dashboard">
-          <div className="tabs">{this.renderCryptocurrencyTabs()}</div>
-          {this.renderPriceTable()}
-        </div>
+      <div className="dashboard">
+        <div className="tabs">{this.renderCryptocurrencyTabs()}</div>
+        {this.renderPriceTable()}
       </div>
     );
   }

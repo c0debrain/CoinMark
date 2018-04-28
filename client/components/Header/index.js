@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Accounts from '../accounts';
+
 import './index.css';
 
 class Header extends Component {
@@ -9,6 +11,11 @@ class Header extends Component {
         <div className="navbar-header">
           <a className="navbar-brand">CoinMark</a>
         </div>
+        <ul className="nav navbar-nav">
+          <li>
+            <Accounts />
+          </li>
+        </ul>
         <ul className="nav navbar-nav navbar-right">
           <li className="userIcon">
             <a className="glyphicon glyphicon-user" />

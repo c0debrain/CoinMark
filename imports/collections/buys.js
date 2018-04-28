@@ -4,7 +4,7 @@ Meteor.methods({
   'buys.insert': function() {
     return Buys.insert({
       createdAt: new Date(),
-      coinType: cryptoType,
+      coinType: '',
       coinAmount: 0.0,
       ownerId: this.userId
     });

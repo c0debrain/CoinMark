@@ -3,29 +3,34 @@ import PropTypes from 'prop-types';
 
 import { Buys } from '../../../../imports/collections/buys';
 
-const Buy = ({ cryptocurrencyLabel, durationLabel, spotPrice }) => {
-  //handleSubmit(event) {
-  //event.preventDefault();
+class Buy extends Component {
+  constructor(props) {
+    super(props);
 
-  //Meteor.call('buys.insert');
-  //}
+    this.state = { error: '' };
+  }
 
-  return (
-    /**<form onSubmit={this.handleSubmit.bind(this)}>
-      <div className="form-group">
-        <label>Add server</label>
-        <input ref="buy" className="form-control" />
+  onBuyClick(event) {
+    event.preventDefault();
+    Meteor.call('buys.insert');
+  }
+  render() {
+    return (
+      <div>
+        {this.props.cryptocurrencyLabel}
+        <br />
+        {this.props.spotPrice}
+        <button
+          className="btn btn-primary"
+          href="#"
+          onClick={this.onBuyClick.bind(this)}
+        >
+          Buy
+        </button>
       </div>
-      <div className="text-danger">{this.state.error}</div>
-      <button className="btn btn-primary">Add!</button>
-    </form>*/
-    <div>
-      <div>{cryptocurrencyLabel}</div>
-      <br />
-      <div>{spotPrice}</div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 Buy.propTypes = {
   cryptocurrencyLabel: PropTypes.string.isRequired,

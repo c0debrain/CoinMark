@@ -1,26 +1,26 @@
 import { Mongo } from 'meteor/mongo';
 
 Meteor.methods({
-  'bins.insert': function() {
-    return Bins.insert({
+  'buys.insert': function() {
+    return Buys.insert({
       createdAt: new Date(),
-      content: '',
-      sharedWith: [],
+      coinType: cryptoType,
+      coinAmount: 0.0,
       ownerId: this.userId
     });
   },
 
-  'bins.remove': function(bin) {
-    return Bins.remove(bin);
+  'buys.remove': function(buy) {
+    return Buys.remove(buy);
   },
 
-  'bins.update': function(bin, content) {
-    return Bins.update(bin._id, { $set: { content } });
+  'buys.purchase': function(buy, coinAmount) {
+    return Buys.update(buy._id, { $inc: { coinAmount } });
   },
 
-  'bins.share': function(bin, email) {
-    return Bins.update(bin._id, { $push: { sharedWith: email } });
+  'buys.share': function(buy, email) {
+    return Buys.update(buy._id, { $push: { sharedWith: email } });
   }
 });
 
-export const Bins = new Mongo.Collection('bins');
+export const Buys = new Mongo.Collection('buys');

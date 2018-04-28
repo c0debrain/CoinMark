@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Chart from '../../containers/Chart';
-import BuySell from '../../components/buySell';
+import BuySell from '../../components/buySell/index';
 
 import './index.css';
 
@@ -29,13 +29,12 @@ class MiniNav extends Component {
 
           <div className="tab-content">
             <div id="dashboard" className="tab-pane fade in active">
-              <p className="chartPadding">
+              <p className="tabPadding">
                 <Chart />
               </p>
             </div>
             <div id="buysell" className="tab-pane fade">
-              <h3>Menu 2</h3>
-              <p>
+              <p className="tabPadding">
                 <BuySell />
               </p>
             </div>

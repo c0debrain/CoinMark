@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
-import HorizontalChartAxis from '../HorizontalChartAxis';
-import PriceChart from '../PriceChart';
 import PriceTable from '../PriceTable';
 import Tabs from '../Tabs';
-import VerticalChartAxis from '../VerticalChartAxis';
+
+import Buy from './components/buy';
 
 import { fetchPriceHistory, fetchSpotPrices } from '../../api';
 import { CRYPTOCURRENCY, DURATION, POLL_FREQUENCY } from '../../constants';
@@ -28,7 +27,7 @@ const INITIAL_STATE = {
   spotPrices: []
 };
 
-class Chart extends Component {
+class BuySell extends Component {
   constructor(props) {
     super(props);
     this.state = INITIAL_STATE;
@@ -168,14 +167,30 @@ class Chart extends Component {
     );
   }
 
+  renderBuy() {
+    const { selectedCryptocurrencyIndex, spotPrice } = this.state;
+
+    return (
+      <div className="table">
+        <Buy
+          cryptocurrencyLabel={
+            CRYPTOCURRENCY_LIST[selectedCryptocurrencyIndex].name
+          }
+          spotPrice={spotPrice.amount}
+        />
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="dashboard">
         <div className="tabs">{this.renderCryptocurrencyTabs()}</div>
         {this.renderPriceTable()}
+        {this.renderBuy()}
       </div>
     );
   }
 }
 
-export default Chart;
+export default BuySell;

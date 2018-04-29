@@ -10,15 +10,9 @@ Meteor.methods({
     });
   },
 
-  /*buyCoin(coinType, coinAmount) {
-    var Purchase = buys.insert({
-      coinType = coinType,
-      coinAmount = coinAmount,
-      createdAt: new Date(),
-      ownerId: this.userId
-    });
-    return Purchase
-  }*/
+  updateCoin(coinAmount) {
+    return Buys.update(buy, { $inc: { coinAmount } });
+  },
 
   'buys.remove': function(buy) {
     return Buys.remove(buy);

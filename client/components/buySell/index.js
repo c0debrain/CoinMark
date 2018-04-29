@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import PriceTable from '../PriceTable';
 import Tabs from '../Tabs';
 
-import Buy from './components/buy';
+//import Buy from './components/buy';
 import { Buys } from '../../../imports/collections/buys';
 
 import { fetchPriceHistory, fetchSpotPrices } from '../../api';
@@ -181,6 +181,18 @@ class BuySell extends Component {
     });
   }
 
+  onUpdateClick(event) {
+    event.preventDefault();
+    const coinAmount = $('#dare_price').val();
+    Meteor.call('updateCoin', coinAmount, function(err, res) {
+      if (err) {
+        console.log(JSON.stringify(err, null, 2));
+      } else {
+        console.log(res, 'success!');
+      }
+    });
+  }
+
   renderBuy() {
     const { selectedCryptocurrencyIndex, spotPrice } = this.state;
 
@@ -198,37 +210,30 @@ class BuySell extends Component {
 
     return (
       <div className="table">
-        <Buy
-          cryptocurrencyLabel={
-            CRYPTOCURRENCY_LIST[selectedCryptocurrencyIndex].name
-          }
-          spotPrice={spotPrice.amount}
-        />
-
         <form>
-          test
           <div className="form-group">
-            <label>Add buy</label>
-            <input ref="buy" className="form-control" />
             <input
+              type="hidden"
               value={CRYPTOCURRENCY_LIST[selectedCryptocurrencyIndex].name}
               id="coinType"
               readonly="readonly"
             />
 
-            <input value={spotPrice.amount} id="coinAmountUSD" />
+            <input type="hidden" value={spotPrice.amount} id="coinAmountUSD" />
 
             <input
               class="span4 input-big"
               id="dare_price"
               name="price"
               size="30"
-              type="text"
+              type="number"
               onChange="updatePrice()"
             />
+            <br />
             <input
               class="span4 input-big"
               id="total_price_amount"
+              size="20"
               readonly="readonly"
               value=""
             />
@@ -238,7 +243,7 @@ class BuySell extends Component {
             className="btn btn-primary"
             onClick={this.onBuyClick.bind(this)}
           >
-            Add!
+            Buy
           </button>
         </form>
       </div>

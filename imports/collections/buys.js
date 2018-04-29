@@ -1,14 +1,24 @@
 import { Mongo } from 'meteor/mongo';
 
 Meteor.methods({
-  'buys.insert': function() {
+  buyCoin(coinType, coinAmount) {
     return Buys.insert({
-      //createdAt: new Date('<YYYY-MM-DD hh:mm>'),
-      coinType: (name = ''),
-      coinAmount: (amount = 0.0),
+      coinType: coinType,
+      coinAmount: coinAmount,
+      createdAt: new Date('<YYYY-MM-DD hh:mm>'),
       ownerId: this.userId
     });
   },
+
+  /*buyCoin(coinType, coinAmount) {
+    var Purchase = buys.insert({
+      coinType = coinType,
+      coinAmount = coinAmount,
+      createdAt: new Date(),
+      ownerId: this.userId
+    });
+    return Purchase
+  }*/
 
   'buys.remove': function(buy) {
     return Buys.remove(buy);

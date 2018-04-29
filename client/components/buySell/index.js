@@ -5,6 +5,7 @@ import PriceTable from '../PriceTable';
 import Tabs from '../Tabs';
 
 import Buy from './components/buy';
+import { Buys } from '../../../imports/collections/buys';
 
 import { fetchPriceHistory, fetchSpotPrices } from '../../api';
 import { CRYPTOCURRENCY, DURATION, POLL_FREQUENCY } from '../../constants';
@@ -169,14 +170,31 @@ class BuySell extends Component {
 
   onBuyClick(event) {
     event.preventDefault();
-    Buys.insert({
-      coinType: <div>{this.props.cryptocurrencyLabel}</div>,
-      coinAmount: <div>{this.props.spotPrice}</div>
+    const coinType = $('#coinType').val(),
+      coinAmount = $('#dare_price').val();
+    Meteor.call('buyCoin', coinType, coinAmount, function(err, res) {
+      if (err) {
+        console.log(JSON.stringify(err, null, 2));
+      } else {
+        console.log(res, 'success!');
+      }
     });
-    Meteor.call('buys.insert');
   }
+
   renderBuy() {
     const { selectedCryptocurrencyIndex, spotPrice } = this.state;
+
+    $('#dare_price').change(function() {
+      var price = Number($(this).val());
+      var total = price * $('#coinAmountUSD').val();
+      $('#total_price_amount').val(total);
+    });
+
+    function updatePrice(val) {
+      $('#dare_price').val(val);
+      $('#dare_price').trigger('change');
+    }
+    updatePrice();
 
     return (
       <div className="table">
@@ -186,10 +204,34 @@ class BuySell extends Component {
           }
           spotPrice={spotPrice.amount}
         />
+
         <form>
+          test
           <div className="form-group">
             <label>Add buy</label>
             <input ref="buy" className="form-control" />
+            <input
+              value={CRYPTOCURRENCY_LIST[selectedCryptocurrencyIndex].name}
+              id="coinType"
+              readonly="readonly"
+            />
+
+            <input value={spotPrice.amount} id="coinAmountUSD" />
+
+            <input
+              class="span4 input-big"
+              id="dare_price"
+              name="price"
+              size="30"
+              type="text"
+              onChange="updatePrice()"
+            />
+            <input
+              class="span4 input-big"
+              id="total_price_amount"
+              readonly="readonly"
+              value=""
+            />
           </div>
           <div className="text-danger" />
           <button

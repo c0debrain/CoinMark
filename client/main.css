@@ -16,3 +16,8 @@ body {
   height: 100%;
   justify-content: center;
 }
+
+#login-buttons {
+  margin: 18px;
+  font-size: 14px;
+}

@@ -167,6 +167,14 @@ class BuySell extends Component {
     );
   }
 
+  onBuyClick(event) {
+    event.preventDefault();
+    Buys.insert({
+      coinType: <div>{this.props.cryptocurrencyLabel}</div>,
+      coinAmount: <div>{this.props.spotPrice}</div>
+    });
+    Meteor.call('buys.insert');
+  }
   renderBuy() {
     const { selectedCryptocurrencyIndex, spotPrice } = this.state;
 
@@ -178,6 +186,19 @@ class BuySell extends Component {
           }
           spotPrice={spotPrice.amount}
         />
+        <form>
+          <div className="form-group">
+            <label>Add buy</label>
+            <input ref="buy" className="form-control" />
+          </div>
+          <div className="text-danger" />
+          <button
+            className="btn btn-primary"
+            onClick={this.onBuyClick.bind(this)}
+          >
+            Add!
+          </button>
+        </form>
       </div>
     );
   }

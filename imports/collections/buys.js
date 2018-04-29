@@ -3,9 +3,9 @@ import { Mongo } from 'meteor/mongo';
 Meteor.methods({
   'buys.insert': function() {
     return Buys.insert({
-      createdAt: new Date(),
-      coinType: '',
-      coinAmount: 0.0,
+      //createdAt: new Date('<YYYY-MM-DD hh:mm>'),
+      coinType: (name = ''),
+      coinAmount: (amount = 0.0),
       ownerId: this.userId
     });
   },
@@ -18,8 +18,8 @@ Meteor.methods({
     return Buys.update(buy._id, { $inc: { coinAmount } });
   },
 
-  'buys.share': function(buy, email) {
-    return Buys.update(buy._id, { $push: { sharedWith: email } });
+  'buys.wallet': function(buy, coinAmount) {
+    return Buys.update(buy.coinType, { $inc: { coinAmount } });
   }
 });
 

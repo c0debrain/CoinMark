@@ -211,7 +211,7 @@ class BuySell extends Component {
 
     return (
       <div className="table">
-        <form>
+        <form className="buysellform">
           <div className="form-group">
             <div className="label">
               {CRYPTOCURRENCY_LIST[selectedCryptocurrencyIndex].name}
@@ -225,7 +225,7 @@ class BuySell extends Component {
             <input type="hidden" value={spotPrice.amount} id="coinAmountUSD" />
 
             <input
-              class="span4 input-big"
+              class="span4 input-big coinAmountBox"
               id="dare_price"
               name="price"
               size="30"
@@ -236,7 +236,7 @@ class BuySell extends Component {
             <br />
             <div className="label">USD</div>
             <input
-              class="span4 input-big"
+              class="span4 input-big coinCountBox"
               id="total_price_amount"
               size="20"
               readonly="readonly"
@@ -245,14 +245,14 @@ class BuySell extends Component {
           </div>
           <div className="text-danger" />
           <button
-            className="btn btn-primary"
+            className="btn btn-primary buybutton"
             id="buttonD"
             onClick={this.onBuyClick.bind(this)}
           >
             Buy
           </button>
           <button
-            className="btn btn-primary"
+            className="btn btn-primary buybutton"
             id="buttonD"
             onClick={this.onSellClick.bind(this)}
           >

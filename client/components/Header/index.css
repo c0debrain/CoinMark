@@ -1,7 +1,6 @@
 body{
   font-family: 'Arial';
   color: #4B0082;
-  width:100%;
 }
 
 .navbar-brand{
@@ -28,4 +27,10 @@ body{
   float:right;
 
 
+}
+#signup-link{
+    color: black !important;
+  }
+.login-close-text{
+  color: black !important;
 }

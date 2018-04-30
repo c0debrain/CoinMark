@@ -185,10 +185,11 @@ class BuySell extends Component {
     event.preventDefault();
     const coinType = $('#coinType').val(),
       coinAmount = $('#dare_price').val();
-    Meteor.call(coinType, coinAmount, function(err, res) {
+    Meteor.call('incrementCoin', function(err, res) {
       if (err) {
         console.log(JSON.stringify(err, null, 2));
       } else {
+        // Do whatever
         console.log(res, 'success!');
       }
     });

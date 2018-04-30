@@ -47,6 +47,10 @@ Meteor.methods({
     return Buys.remove(buy);
   },
 
+  'buys.update': function(buy, coinAmount) {
+    return Bins.update(buy._id, { $set: { coinAmount } });
+  },
+
   Bitcoinupdate(coinAmount) {
     return Buys.update({
       coinAmount: coinAmount,
@@ -55,8 +59,34 @@ Meteor.methods({
     });
   },
 
+  /*incrementCoin: function(coinType) {
+    check(coinType, Meteor.Collection.ObjectID);
+
+    Buys.update(
+      {
+        _id: coinType
+      },
+      {
+        $inc: {
+          coinAmount: 1
+        }
+      },
+      function(error, affectedDocs) {
+        if (error) {
+          throw new Meteor.Error(500, error.message);
+        } else {
+          return 'Update Successful';
+        }
+      }
+    );
+  },*/
+
+  incrementCoin: function(coinType) {
+    Buys.update({ ownerId: this.userId }, { $inc: { coinAmount: 1 } });
+  },
+
   'buys.update': function(coinAmount) {
-    buys.update(buy, { $inc: { coinAmount: coinAmount } });
+    Buys.update(buy, { $inc: { coinAmount: coinAmount } });
   },
 
   'buys.purchase': function(buy, coinAmount) {

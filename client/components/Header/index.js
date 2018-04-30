@@ -16,11 +16,6 @@ class Header extends Component {
             <Accounts />
           </li>
         </ul>
-        <ul className="nav navbar-nav navbar-right">
-          <li className="userIcon">
-            <a className="glyphicon glyphicon-user" />
-          </li>
-        </ul>
       </nav>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Chart from '../../containers/Chart';
 import BuySell from '../../components/buySell/index';
+import Lex from '../../components/Lex/index';
 
 import './index.css';
 
@@ -16,13 +17,13 @@ class MiniNav extends Component {
               </a>
             </li>
             <li className="navoption">
-              <a data-toggle="tab" href="#buysell">
+              <a data-toggle="tab" href="#buy">
                 Buy/Sell
               </a>
             </li>
             <li className="navoption">
-              <a data-toggle="tab" href="#wallet">
-                Wallet
+              <a data-toggle="tab" href="#lex">
+                CoinBot
               </a>
             </li>
           </ul>
@@ -33,16 +34,14 @@ class MiniNav extends Component {
                 <Chart />
               </p>
             </div>
-            <div id="buysell" className="tab-pane fade">
+            <div id="buy" className="tab-pane fade">
               <p className="tabPadding">
                 <BuySell />
               </p>
             </div>
-            <div id="wallet" className="tab-pane fade">
-              <h3>Menu 3</h3>
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam.
+            <div id="lex" className="tab-pane fade">
+              <p className="tabPadding">
+                <Lex />
               </p>
             </div>
           </div>

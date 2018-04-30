@@ -181,15 +181,14 @@ class BuySell extends Component {
     });
   }
 
-  onUpdateClick(event) {
+  onSellClick(event) {
     event.preventDefault();
     const coinType = $('#coinType').val(),
       coinAmount = $('#dare_price').val();
-    Meteor.call('incrementCoin', function(err, res) {
+    Meteor.call('buyCoin', coinType, -coinAmount, function(err, res) {
       if (err) {
         console.log(JSON.stringify(err, null, 2));
       } else {
-        // Do whatever
         console.log(res, 'success!');
       }
     });
@@ -214,26 +213,30 @@ class BuySell extends Component {
       <div className="table">
         <form>
           <div className="form-group">
+            <div className="label">
+              {CRYPTOCURRENCY_LIST[selectedCryptocurrencyIndex].name}
+            </div>
             <input
               type="hidden"
               value={CRYPTOCURRENCY_LIST[selectedCryptocurrencyIndex].name}
               id="coinType"
               readonly="readonly"
             />
-
             <input type="hidden" value={spotPrice.amount} id="coinAmountUSD" />
 
             <input
-              className="span4 input-big coinAmountBox"
+              class="span4 input-big"
               id="dare_price"
               name="price"
               size="30"
               type="number"
+              min="0"
               onChange="updatePrice()"
             />
             <br />
+            <div className="label">USD</div>
             <input
-              className="span4 input-big"
+              class="span4 input-big"
               id="total_price_amount"
               size="20"
               readonly="readonly"
@@ -243,15 +246,17 @@ class BuySell extends Component {
           <div className="text-danger" />
           <button
             className="btn btn-primary"
+            id="buttonD"
             onClick={this.onBuyClick.bind(this)}
           >
             Buy
           </button>
           <button
             className="btn btn-primary"
-            onClick={this.onUpdateClick.bind(this)}
+            id="buttonD"
+            onClick={this.onSellClick.bind(this)}
           >
-            Update
+            Sell
           </button>
         </form>
       </div>

@@ -1,43 +1,10 @@
 import { Mongo } from 'meteor/mongo';
 
 Meteor.methods({
-  /*buyCoin(coinType, coinAmount) {
+  buyCoin(coinType, coinAmount) {
     return Buys.insert({
       coinType: coinType,
       coinAmount: coinAmount,
-      createdAt: new Date('<YYYY-MM-DD hh:mm>'),
-      ownerId: this.userId
-    });
-  },*/
-
-  Bitcoin(coinAmount) {
-    return Buys.insert({
-      coinAmount: coinAmount,
-      coinType: 'Bitcoin',
-      createdAt: new Date('<YYYY-MM-DD hh:mm>'),
-      ownerId: this.userId
-    });
-  },
-  'Bitcoin Cash'(coinAmount) {
-    return Buys.insert({
-      coinAmount: coinAmount,
-      coinType: 'Bitcoin Cash',
-      createdAt: new Date('<YYYY-MM-DD hh:mm>'),
-      ownerId: this.userId
-    });
-  },
-  Ethereum(coinAmount) {
-    return Buys.insert({
-      coinAmount: coinAmount,
-      coinType: 'Ethereum',
-      createdAt: new Date('<YYYY-MM-DD hh:mm>'),
-      ownerId: this.userId
-    });
-  },
-  Litecoin(coinAmount) {
-    return Buys.insert({
-      coinAmount: coinAmount,
-      coinType: 'Litecoin',
       createdAt: new Date('<YYYY-MM-DD hh:mm>'),
       ownerId: this.userId
     });

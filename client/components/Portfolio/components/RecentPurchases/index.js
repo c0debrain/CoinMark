@@ -30,10 +30,13 @@ class RecentPurchases extends Component {
   }
 
   renderRows2() {
+    var totalBitcoin = 0;
     return this.props.buys.map(buy => {
       totalBitcoin = totalBitcoin + parseFloat(buy.coinAmount);
-      return console.log({ totalBitcoin });
+      //return console.log({ totalBitcoin });
+      return <div>{totalBitcoin}</div>;
     });
+    return <div>{totalBitcoin}</div>;
   }
 
   render() {

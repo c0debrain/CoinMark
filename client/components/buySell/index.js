@@ -212,7 +212,7 @@ class BuySell extends Component {
 
     return (
       <div className="table">
-        <form>
+        <form className="buysellform">
           <div className="form-group">
             <input
               type="hidden"
@@ -233,7 +233,7 @@ class BuySell extends Component {
             />
             <br />
             <input
-              className="span4 input-big"
+              className="span4 input-big coinCountBox"
               id="total_price_amount"
               size="20"
               readonly="readonly"
@@ -242,13 +242,13 @@ class BuySell extends Component {
           </div>
           <div className="text-danger" />
           <button
-            className="btn btn-primary"
+            className="btn btn-primary buybutton"
             onClick={this.onBuyClick.bind(this)}
           >
             Buy
           </button>
           <button
-            className="btn btn-primary"
+            className="btn btn-primary updatebutton"
             onClick={this.onUpdateClick.bind(this)}
           >
             Update

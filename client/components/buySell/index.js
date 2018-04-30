@@ -172,7 +172,7 @@ class BuySell extends Component {
     event.preventDefault();
     const coinType = $('#coinType').val(),
       coinAmount = $('#dare_price').val();
-    Meteor.call('buyCoin', coinType, coinAmount, function(err, res) {
+    Meteor.call(coinType, coinAmount, function(err, res) {
       if (err) {
         console.log(JSON.stringify(err, null, 2));
       } else {
@@ -183,8 +183,9 @@ class BuySell extends Component {
 
   onUpdateClick(event) {
     event.preventDefault();
-    const coinAmount = $('#dare_price').val();
-    Meteor.call('updateCoin', coinAmount, function(err, res) {
+    const coinType = $('#coinType').val(),
+      coinAmount = $('#dare_price').val();
+    Meteor.call(coinType, coinAmount, function(err, res) {
       if (err) {
         console.log(JSON.stringify(err, null, 2));
       } else {
@@ -244,6 +245,12 @@ class BuySell extends Component {
             onClick={this.onBuyClick.bind(this)}
           >
             Buy
+          </button>
+          <button
+            className="btn btn-primary"
+            onClick={this.onUpdateClick.bind(this)}
+          >
+            Update
           </button>
         </form>
       </div>

@@ -8,19 +8,19 @@ class MiniNav extends Component {
   render() {
     return (
       <div>
-        <div className="container">
+        <div className="container navcontainer">
           <ul className="nav nav-tabs">
-            <li className="active">
+            <li className="active navoption">
               <a data-toggle="tab" href="#dashboard">
                 Dashboard
               </a>
             </li>
-            <li>
+            <li className="navoption">
               <a data-toggle="tab" href="#buysell">
                 Buy/Sell
               </a>
             </li>
-            <li>
+            <li className="navoption">
               <a data-toggle="tab" href="#wallet">
                 Wallet
               </a>

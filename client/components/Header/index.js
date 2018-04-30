@@ -12,7 +12,7 @@ class Header extends Component {
           <a className="navbar-brand">CoinMark</a>
         </div>
         <ul className="nav navbar-nav">
-          <li>
+          <li className="accountss">
             <Accounts />
           </li>
         </ul>

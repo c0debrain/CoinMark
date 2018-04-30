@@ -1,3 +1,14 @@
 .tabPadding {
   padding-top: 20px;
 }
+.chartPadding {
+  padding-top: 20px;
+}
+.navcontainer{
+  width:100% !important;
+  font-style: "Arial" !important;
+}
+.navoption{
+  width:30%;
+  font-size: 25px;
+}

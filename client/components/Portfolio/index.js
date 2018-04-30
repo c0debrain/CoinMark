@@ -30,17 +30,19 @@ class Portfolio extends Component {
       <div className="row">
         <div className="col-md-5">
           <span class="pull-left">
-            <h1 className="headers" onClick={() => this.showHideTwo()}>
+            <h1 onClick={()=>this.showHideTwo()}> <span className = "headersport">
               {' '}
               Recent Purchases
+              </span>
             </h1>
             {this.state.showMeTwo ? <RecentPurchases /> : null}
           </span>
         </div>
         <div className="col-md-4">
           <span class="pull-right">
-            <h1 className="headers" onClick={() => this.showHideOne()}>
+              <h1  onClick={()=>this.showHideOne()}> <span className = "headersport">
               Wallet
+              </span>
             </h1>
             {this.state.showMeOne ? <Wallet /> : null}
           </span>

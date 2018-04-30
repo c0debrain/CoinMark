@@ -224,7 +224,7 @@ class BuySell extends Component {
             <input type="hidden" value={spotPrice.amount} id="coinAmountUSD" />
 
             <input
-              class="span4 input-big"
+              className="span4 input-big coinAmountBox"
               id="dare_price"
               name="price"
               size="30"
@@ -233,7 +233,7 @@ class BuySell extends Component {
             />
             <br />
             <input
-              class="span4 input-big"
+              className="span4 input-big"
               id="total_price_amount"
               size="20"
               readonly="readonly"

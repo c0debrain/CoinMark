@@ -216,6 +216,7 @@ class BuySell extends Component {
             <div className="label">
               {CRYPTOCURRENCY_LIST[selectedCryptocurrencyIndex].name}
             </div>
+            <br />
             <input
               type="hidden"
               value={CRYPTOCURRENCY_LIST[selectedCryptocurrencyIndex].name}
@@ -235,6 +236,7 @@ class BuySell extends Component {
             />
             <br />
             <div className="label">USD</div>
+            <br />
             <input
               class="span4 input-big coinCountBox"
               id="total_price_amount"

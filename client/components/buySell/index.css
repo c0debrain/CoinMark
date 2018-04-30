@@ -1,54 +1,47 @@
-.coinAmountBox{
-  width:75% !important;
+.coinAmountBox {
+  width: 75% !important;
   border-radius: 2px;
   border: 2px solid black;
   height: 40px;
   margin: auto;
   border-radius: 4px;
-
-
-
 }
-.coinCountBox{
-    width:75% !important;
-    border-radius: 2px;
-    border: 2px solid black;
-    height: 40px;
-    align:center;
-    border-radius: 4px;
-
-}
-
-.buysellform{
+.coinCountBox {
+  width: 75% !important;
+  border-radius: 2px;
   border: 2px solid black;
-  width:20%;
+  height: 40px;
+  align: center;
+  border-radius: 4px;
+}
+
+.buysellform {
+  border: 2px solid black;
+  width: 20%;
   padding-top: 50px;
-  padding-bottom: 80px;
+  padding-bottom: 50px;
   margin: auto;
   margin-top: 120px;
   text-align: center;
   border-radius: 4px;
-  box-shadow: 0px 1.5px 10px #A0A0A0;
-  border-color: #4B0082;
-
+  box-shadow: 0px 1.5px 10px #a0a0a0;
+  border-color: #4b0082;
 }
 
-.buybutton{
-  background-color: #4B0082;
-  font:white;
-  align:center;
-  height:45px;
-  width:90px;
+.buybutton {
+  background-color: #4b0082;
+  font: white;
+  align: center;
+  height: 45px;
+  width: 90px;
   font-size: 20px;
-
 }
 
-.updatebutton{
-  background-color: #4B0082;
-  font:white;
-  align:center;
-  height:45px;
-  width:90px;
+.updatebutton {
+  background-color: #4b0082;
+  font: white;
+  align: center;
+  height: 45px;
+  width: 90px;
   font-size: 20px;
-
 }

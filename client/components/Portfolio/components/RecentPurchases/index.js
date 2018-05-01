@@ -14,6 +14,8 @@ class RecentPurchases extends Component {
           <td>{toString(buy.createdAt)}</td>
           <td>{buy.coinType}</td>
           <td>{buy.coinAmount}</td>
+          <td>{buy.coinUSD}</td>
+
           <td>
             <span className="pull-right">
               <button
@@ -49,6 +51,7 @@ class RecentPurchases extends Component {
               <th>Date</th>
               <th>Crypto</th>
               <th>Amount</th>
+              <th>USD</th>
               <th />
             </tr>
           </thead>

@@ -1,10 +1,11 @@
 import { Mongo } from 'meteor/mongo';
 
 Meteor.methods({
-  buyCoin(coinType, coinAmount) {
+  buyCoin(coinType, coinAmount, coinUSD) {
     return Buys.insert({
       coinType: coinType,
       coinAmount: coinAmount,
+      coinUSD: coinUSD,
       createdAt: new Date('<YYYY-MM-DD hh:mm>'),
       ownerId: this.userId
     });

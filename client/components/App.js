@@ -4,8 +4,6 @@ import Chart from '../containers/Chart';
 import Header from './Header/';
 import MiniNav from './MiniNav/';
 import Portfolio from './Portfolio/';
-import '../reset.css';
-import '../main.css';
 
 export default () => {
   return (

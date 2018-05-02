@@ -7,12 +7,12 @@ import './index.css';
 class Header extends Component {
   render() {
     return (
-      <nav className="nav navbar-default navbar-fixed-top">
+      <nav className="nav navbar-default navbar-fixed-top" role='header'>
         <div className="navbar-header">
           <a className="navbar-brand">CoinMark</a>
         </div>
         <ul className="nav navbar-nav">
-          <li className="accountss">
+          <li className="accountss" tabindex='0' role='menu'>
             <Accounts />
           </li>
         </ul>

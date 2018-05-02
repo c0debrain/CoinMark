@@ -6,7 +6,7 @@ class WalletHeader extends Component {
   render() {
     return (
       <div>
-        <h1 className="headersport">Wallet</h1>
+        <h1 className="headersport" tabindex='9' role='button'>Wallet</h1>
       </div>
     );
   }

@@ -142,11 +142,14 @@ class Lex extends Component {
         <canvas id="canvasParticles"></canvas>
         <div className="audio-control">
           <p className="lextext">
-            <h3>Click on microphone to active!</h3>
+            <h3>Click on microphone to activate!</h3>
             <br />
           </p>
           <p id="audio-control" className="white-circle">
             <img
+              role='button'
+              tabindex='7'
+              alt='Coin Bot Microphone Button'
               onClick={awscall}
               src='https://d30y9cdsu7xlg0.cloudfront.net/png/2313-200.png'
             />

@@ -8,27 +8,27 @@ import './index.css';
 class MiniNav extends Component {
   render() {
     return (
-      <div>
+      <div role='navigation'>
         <div className="container navcontainer">
           <ul className="nav nav-tabs">
             <li className="active navoption">
-              <a data-toggle="tab" href="#dashboard">
+              <a data-toggle="tab" href="#dashboard" tabindex='1'>
                 Dashboard
               </a>
             </li>
             <li className="navoption">
-              <a data-toggle="tab" href="#buy">
+              <a data-toggle="tab" href="#buy" tabindex='2'>
                 Buy/Sell
               </a>
             </li>
             <li className="navoption">
-              <a data-toggle="tab" href="#lex">
+              <a data-toggle="tab" href="#lex" tabindex='3'>
                 CoinBot
               </a>
             </li>
           </ul>
 
-          <div className="tab-content">
+          <div className="tab-content" role='main'>
             <div id="dashboard" className="tab-pane fade in active">
               <p className="tabPadding">
                 <Chart />

@@ -32,7 +32,7 @@ class Portfolio extends Component {
 
   render() {
     return (
-      <div className="row">
+      <div className="row" role='complementary'>
         <div onClick={() => this.showHideTwo()} className="column">
           {' '}
           <RecentHeader />

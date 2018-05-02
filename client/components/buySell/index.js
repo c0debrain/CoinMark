@@ -234,6 +234,7 @@ class BuySell extends Component {
               type="number"
               min="0"
               onChange="updatePrice()"
+              tabindex='4'
             />
             <br />
             <div className="label">USD</div>
@@ -252,6 +253,7 @@ class BuySell extends Component {
               className="btn btn-primary buybutton"
               id="buttonD"
               onClick={this.onBuyClick.bind(this)}
+              tabindex='5'
             >
               Buy
             </button>
@@ -259,6 +261,7 @@ class BuySell extends Component {
               className="btn btn-primary updatebutton"
               id="buttonD"
               onClick={this.onSellClick.bind(this)}
+              tabindex='6'
             >
               Sell
             </button>

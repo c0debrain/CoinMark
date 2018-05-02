@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './index.css';
 
 class Lex extends Component {
+  
   render() {
     function awscall(e) {
       console.log('The link was clicked.');
@@ -62,7 +63,7 @@ class Lex extends Component {
             particleAlphabet.canvas = document.getElementById('canvasParticles');
             particleAlphabet.ctx = particleAlphabet.canvas.getContext('2d');
             particleAlphabet.W = window.innerWidth;
-            particleAlphabet.H = 165;
+            particleAlphabet.H = 85;
             particleAlphabet.particlePositions = [];
             particleAlphabet.particles = [];
             particleAlphabet.tmpCanvas = document.createElement('canvas');
@@ -129,7 +130,6 @@ class Lex extends Component {
         animate: function() {
             requestAnimationFrame(particleAlphabet.animate);
             particleAlphabet.ctx.fillStyle = 'rgba(255, 255, 255, .8)';
-            console.log(particleAlphabet.ctx.fillStyle);
             particleAlphabet.ctx.fillRect(0, 0, particleAlphabet.W, particleAlphabet.H);
             particleAlphabet.animateParticles();
         }
@@ -148,7 +148,7 @@ class Lex extends Component {
           <p id="audio-control" className="white-circle">
             <img
               onClick={awscall}
-              src="http://chittagongit.com//images/microphone-icon-png/microphone-icon-png-11.jpg"
+              src='https://d30y9cdsu7xlg0.cloudfront.net/png/2313-200.png'
             />
           </p>
           <p className="lextext">

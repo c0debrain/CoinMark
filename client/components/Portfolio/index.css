@@ -1,14 +1,17 @@
-.headersport{
-  font-family: "Arial";
-  background-color: #4B0082;
-  font-weight: bolder;
-  color :white !important;
-  font-size: 30px;
-  border: 2px solid #4B0082;
-  border-style: ridge;
-  box-shadow: 5px 5px 5px #9400D3;
-  padding-left: 60px !important;
-  padding-right: 60px !important;
-  column-width: 30% !important;
-  border-radius: 4px;
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.RecentTable {
+  padding-left: 30px;
+
+  margin-bottom: 20px;
 }

@@ -3,6 +3,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { Buys } from '../../../../../imports/collections/buys';
 var totalBitcoin = 0;
 var totalUSD = 0;
+import './index.css';
 
 class RecentPurchases extends Component {
   onBuyRemove(buy) {
@@ -16,17 +17,6 @@ class RecentPurchases extends Component {
           <td>{buy.coinType}</td>
           <td>{buy.coinAmount}</td>
           <td>{buy.coinUSD}</td>
-
-          <td>
-            <span className="pull-right">
-              <button
-                className="btn btn-danger"
-                onClick={() => this.onBuyRemove(buy)}
-              >
-                Remove
-              </button>
-            </span>
-          </td>
         </tr>
       );
     });
@@ -55,15 +45,14 @@ class RecentPurchases extends Component {
 
   render() {
     return (
-      <div>
-        <table className="table">
+      <div id="table">
+        <table id="customers">
           <thead>
             <tr>
               <th>Date</th>
               <th>Crypto</th>
               <th>Amount</th>
               <th>USD</th>
-              <th />
             </tr>
           </thead>
           <tbody>{this.renderRows()}</tbody>

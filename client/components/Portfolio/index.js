@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import RecentPurchases from './components/RecentPurchases';
-import Wallet from './components/Wallet';
+import RecentPurchases from './components/RecentPurchases/index';
+import RecentHeader from './components/RecentPurchases/header';
+import Wallet from './components/Wallet/index';
+import WalletHeader from './components/Wallet/header';
+
+import './index.css';
+
 class Portfolio extends Component {
   //Constructor inherits main class functionality. Sets states of both headers to showing true.
   constructor() {
@@ -28,23 +33,19 @@ class Portfolio extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-md-5">
-          <span className="pull-left">
-            <h1 onClick={() => this.showHideTwo()}>
-              {' '}
-              <span className="headersport"> Recent Purchases</span>
-            </h1>
+        <div onClick={() => this.showHideTwo()} className="column">
+          {' '}
+          <RecentHeader />
+          <div className="RecentTable">
             {this.state.showMeTwo ? <RecentPurchases /> : null}
-          </span>
+          </div>
         </div>
-        <div className="col-md-5">
-          <span className="pull-right">
-            <h1 onClick={() => this.showHideOne()}>
-              {' '}
-              <span className="headersport">Wallet</span>
-            </h1>
-            <div>{this.state.showMeOne ? <Wallet /> : null}</div>
-          </span>
+        <div onClick={() => this.showHideOne()} className="column">
+          {' '}
+          <WalletHeader />
+          <div className="RecentTable">
+            {this.state.showMeOne ? <Wallet /> : null}
+          </div>
         </div>
       </div>
     );

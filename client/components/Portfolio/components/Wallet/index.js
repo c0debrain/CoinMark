@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Buys } from '../../../../../imports/collections/buys';
+import './index.css';
 
 var totalBitcoin = 0;
 var totalBitcoinCash = 0;
@@ -103,53 +104,43 @@ class Wallet extends Component {
 
   renderRows() {
     return (
-      <div className="">
+      <tbody>
         <tr>
-          <th scope="row">Bitcoin</th>
+          <td>Bitcoin</td>
           <td>{this.renderBitcoin()}</td>
-          <td />
           <td>{this.renderBitcoinUSD()}</td>
         </tr>
         <tr>
-          <th scope="row">Bitcoin Cash</th>
+          <td>Bitcoin Cash</td>
           <td>{this.renderBitcoinCash()}</td>
-          <td />
           <td>{this.renderBitcoinCashUSD()}</td>
         </tr>
         <tr>
-          <th scope="row">Ethereum</th>
+          <td>Ethereum</td>
           <td>{this.renderEthereum()}</td>
-          <td />
           <td>{this.renderEthereumUSD()}</td>
         </tr>
         <tr>
-          <th scope="row">LiteCoin</th>
+          <td>LiteCoin</td>
           <td>{this.renderLitecoin()}</td>
-          <td />
           <td>{this.renderLitecoinUSD()}</td>
         </tr>
-        <tr>
-          <th scope="row" />
-          <td>.</td>
-          <td>.</td>
-          <td>.</td>
-        </tr>
-      </div>
+      </tbody>
     );
   }
 
   render() {
     return (
-      <div>
-        <table className="table">
+      <div id="table">
+        <table id="customers">
           <thead>
             <tr>
-              <th scope="col">Crypto</th>
-              <th scope="col">Amount</th>
-              <th scope="col">USD</th>
+              <th>Crypto</th>
+              <th>Amount</th>
+              <th>USD</th>
             </tr>
           </thead>
-          <tbody>{this.renderRows()}</tbody>
+          {this.renderRows()}
         </table>
       </div>
     );

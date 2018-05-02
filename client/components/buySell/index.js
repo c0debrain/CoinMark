@@ -247,20 +247,22 @@ class BuySell extends Component {
             />
           </div>
           <div className="text-danger" />
-          <button
-            className="btn btn-primary buybutton"
-            id="buttonD"
-            onClick={this.onBuyClick.bind(this)}
-          >
-            Buy
-          </button>
-          <button
-            className="btn btn-primary buybutton"
-            id="buttonD"
-            onClick={this.onSellClick.bind(this)}
-          >
-            Sell
-          </button>
+          <div className="buttonBuySell">
+            <button
+              className="btn btn-primary buybutton"
+              id="buttonD"
+              onClick={this.onBuyClick.bind(this)}
+            >
+              Buy
+            </button>
+            <button
+              className="btn btn-primary updatebutton"
+              id="buttonD"
+              onClick={this.onSellClick.bind(this)}
+            >
+              Sell
+            </button>
+          </div>
         </form>
       </div>
     );

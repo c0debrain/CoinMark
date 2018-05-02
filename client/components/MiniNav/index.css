@@ -4,11 +4,18 @@
 .chartPadding {
   padding-top: 20px;
 }
-.navcontainer{
-  width:100% !important;
-  font-style: "Arial" !important;
+.navcontainer {
+  width: 100% !important;
+  font-style: 'Arial' !important;
 }
-.navoption{
-  width:30%;
+.navoption {
+  width: 30%;
   font-size: 25px;
+}
+a {
+  color: #4b0082;
+}
+
+a .selected {
+  color: #9c7db6;
 }

@@ -45,12 +45,12 @@
 }
 
 .Tabs-item.selected {
-  color: #0667d0;
+  color: #4b0082;
 }
 
 .Tabs-item.selected::after {
   bottom: -1px;
-  border-bottom: 1px solid #0667d0;
+  border-bottom: 1px solid #4b0082;
   content: '';
   height: 1px;
   left: 0;

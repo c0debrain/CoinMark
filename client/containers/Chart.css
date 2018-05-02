@@ -56,7 +56,7 @@
 }
 
 .tabs .cryptocurrency span + span::before {
-  content: " · ";
+  content: ' · ';
 }
 
 .tabs .cryptocurrency span:not(:first-child) {

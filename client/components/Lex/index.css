@@ -42,3 +42,9 @@ p.lexError {
   float: right;
   background-color: #f77;
 }
+p {
+  text-align: center;
+}
+img {
+  width: 15%;
+}

@@ -37,6 +37,13 @@
   font-size: 20px;
 }
 
+.buybutton:hover {
+  background-color: #8657a8;
+}
+.updatebutton:hover {
+  background-color: #8657a8;
+}
+
 .updatebutton {
   background-color: #4b0082;
   font: white;

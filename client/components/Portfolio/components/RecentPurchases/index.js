@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Buys } from '../../../../../imports/collections/buys';
 var totalBitcoin = 0;
+var totalUSD = 0;
 
 class RecentPurchases extends Component {
   onBuyRemove(buy) {
@@ -11,9 +12,11 @@ class RecentPurchases extends Component {
     return this.props.buys.map(buy => {
       return (
         <tr key={buy._id}>
-          <td>{toString(buy.createdAt)}</td>
+          <td>{buy.createdAt.toString()}</td>
           <td>{buy.coinType}</td>
           <td>{buy.coinAmount}</td>
+          <td>{buy.coinUSD}</td>
+
           <td>
             <span className="pull-right">
               <button
@@ -40,6 +43,16 @@ class RecentPurchases extends Component {
     return <div>{totalBitcoin}</div>;
   }
 
+  renderRows3() {
+    var totalUSD = 0;
+    this.props.buys.map(buy => {
+      if (buy.coinType === 'Bitcoin') {
+        totalUSD = totalUSD + parseFloat(buy.coinUSD);
+      }
+    });
+    return <div>{totalUSD}</div>;
+  }
+
   render() {
     return (
       <div>
@@ -49,6 +62,7 @@ class RecentPurchases extends Component {
               <th>Date</th>
               <th>Crypto</th>
               <th>Amount</th>
+              <th>USD</th>
               <th />
             </tr>
           </thead>

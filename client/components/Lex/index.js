@@ -61,7 +61,7 @@ class Lex extends Component {
             console.log('INIT');
             particleAlphabet.canvas = document.getElementById('canvasParticles');
             particleAlphabet.ctx = particleAlphabet.canvas.getContext('2d');
-            particleAlphabet.W = 800;
+            particleAlphabet.W = window.innerWidth;
             particleAlphabet.H = 165;
             particleAlphabet.particlePositions = [];
             particleAlphabet.particles = [];
@@ -98,7 +98,7 @@ class Lex extends Component {
             var keyword = particleAlphabet.time,
                 gridX = 6,
                 gridY = 6;
-            canvas.width = 800;
+            canvas.width = window.innerWidth;
             canvas.height = 165;
             ctx.fillStyle = 'red';
             ctx.font = 'bold 115px Arial';
@@ -141,7 +141,7 @@ class Lex extends Component {
       <div id="CoinBot">
         <canvas id="canvasParticles"></canvas>
         <div className="audio-control">
-          <p>
+          <p className="lextext">
             <h3>Click on microphone to active!</h3>
             <br />
           </p>
@@ -151,7 +151,7 @@ class Lex extends Component {
               src="http://chittagongit.com//images/microphone-icon-png/microphone-icon-png-11.jpg"
             />
           </p>
-          <p>
+          <p className="lextext">
             <span id="message">Passive</span>
           </p>
         </div>

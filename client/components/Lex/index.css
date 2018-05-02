@@ -42,11 +42,21 @@ p.lexError {
   float: right;
   background-color: #f77;
 }
-p {
+.lextext {
+  text-align: center;
+  font-size: 120% !important;
+}
+
+.white-circle{
   text-align: center;
   font-size: 120% !important;
 }
 img {
   width: 15%;
   height: 15%;
+}
+
+#canvasParticles{
+  text-align: center !important;
+  margin: auto !important;
 }

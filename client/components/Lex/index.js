@@ -45,7 +45,7 @@ class Lex extends Component {
       );
       conversation.advanceConversation();
     }
-        var particleAlphabet = {
+        var particleWords = {
         Particle: function(x, y) {
             this.x = x;
             this.y = y;
@@ -60,43 +60,43 @@ class Lex extends Component {
         },
         init: function() {
             console.log('INIT');
-            particleAlphabet.canvas = document.getElementById('canvasParticles');
-            particleAlphabet.ctx = particleAlphabet.canvas.getContext('2d');
-            particleAlphabet.W = window.innerWidth;
-            particleAlphabet.H = 85;
-            particleAlphabet.particlePositions = [];
-            particleAlphabet.particles = [];
-            particleAlphabet.tmpCanvas = document.createElement('canvas');
-            particleAlphabet.tmpCtx = particleAlphabet.tmpCanvas.getContext('2d');
+            particleWords.canvas = document.getElementById('canvasParticles');
+            particleWords.ctx = particleWords.canvas.getContext('2d');
+            particleWords.W = window.innerWidth;
+            particleWords.H = 85;
+            particleWords.particlePositions = [];
+            particleWords.particles = [];
+            particleWords.tmpCanvas = document.createElement('canvas');
+            particleWords.tmpCtx = particleWords.tmpCanvas.getContext('2d');
 
-            particleAlphabet.canvas.width = particleAlphabet.W;
-            particleAlphabet.canvas.height = particleAlphabet.H;
+            particleWords.canvas.width = particleWords.W;
+            particleWords.canvas.height = particleWords.H;
 
             setInterval(function(){
-                particleAlphabet.changeLetter();
-                particleAlphabet.getPixels(particleAlphabet.tmpCanvas, particleAlphabet.tmpCtx);
+                particleWords.changeLetter();
+                particleWords.getPixels(particleWords.tmpCanvas, particleWords.tmpCtx);
             }, 1200);
 
-            particleAlphabet.makeParticles(1000);
-            particleAlphabet.animate();
+            particleWords.makeParticles(1000);
+            particleWords.animate();
         }, 
         currentPos: 0,
         changeLetter: function() {
             var letters = 'GET A COIN, BUY A COIN, SELL A COIN',
                 letters = letters.split(', ');
-            particleAlphabet.time = letters[particleAlphabet.currentPos];
-            particleAlphabet.currentPos++;
-            if (particleAlphabet.currentPos >= letters.length) {
-                particleAlphabet.currentPos = 0;
+            particleWords.time = letters[particleWords.currentPos];
+            particleWords.currentPos++;
+            if (particleWords.currentPos >= letters.length) {
+                particleWords.currentPos = 0;
             }
         },
         makeParticles: function(num) {
             for (var i = 0; i <= num; i++) {
-                particleAlphabet.particles.push(new particleAlphabet.Particle(particleAlphabet.W / 2 + Math.random() * 400 - 200, particleAlphabet.H / 2 + Math.random() * 400 -200));
+                particleWords.particles.push(new particleWords.Particle(particleWords.W / 2 + Math.random() * 400 - 200, particleWords.H / 2 + Math.random() * 400 -200));
             }
         },
         getPixels: function(canvas, ctx) {
-            var keyword = particleAlphabet.time,
+            var keyword = particleWords.time,
                 gridX = 6,
                 gridY = 6;
             canvas.width = window.innerWidth;
@@ -106,36 +106,36 @@ class Lex extends Component {
             ctx.fillText(keyword, canvas.width / 2 - ctx.measureText(keyword).width / 2, canvas.height / 2);
             var idata = ctx.getImageData(0, 0, canvas.width, canvas.height);
             var buffer32 = new Uint32Array(idata.data.buffer);
-            if (particleAlphabet.particlePositions.length > 0) particleAlphabet.particlePositions = [];
+            if (particleWords.particlePositions.length > 0) particleWords.particlePositions = [];
             for (var y = 0; y < canvas.height; y += gridY) {
                 for (var x = 0; x < canvas.width; x += gridX) {
                     if (buffer32[y * canvas.width + x]) {
-                        particleAlphabet.particlePositions.push({x: x, y: y});
+                        particleWords.particlePositions.push({x: x, y: y});
                     }
                 }
             }
         },
         animateParticles: function() {
             var p, pPos;
-            for (var i = 0, num = particleAlphabet.particles.length; i < num; i++) {
-                p = particleAlphabet.particles[i];
-                pPos = particleAlphabet.particlePositions[i];
-                if (particleAlphabet.particles.indexOf(p) === particleAlphabet.particlePositions.indexOf(pPos)) {
+            for (var i = 0, num = particleWords.particles.length; i < num; i++) {
+                p = particleWords.particles[i];
+                pPos = particleWords.particlePositions[i];
+                if (particleWords.particles.indexOf(p) === particleWords.particlePositions.indexOf(pPos)) {
                 p.x += (pPos.x - p.x) * .3;
                 p.y += (pPos.y - p.y) * .3;
-                p.draw(particleAlphabet.ctx);
+                p.draw(particleWords.ctx);
             }
             }
         },
         animate: function() {
-            requestAnimationFrame(particleAlphabet.animate);
-            particleAlphabet.ctx.fillStyle = 'rgba(255, 255, 255, .8)';
-            particleAlphabet.ctx.fillRect(0, 0, particleAlphabet.W, particleAlphabet.H);
-            particleAlphabet.animateParticles();
+            requestAnimationFrame(particleWords.animate);
+            particleWords.ctx.fillStyle = 'rgba(255, 255, 255, .8)';
+            particleWords.ctx.fillRect(0, 0, particleWords.W, particleWords.H);
+            particleWords.animateParticles();
         }
     };
     
-    window.onload = particleAlphabet.init;
+    window.onload = particleWords.init;
 
     return (
       <div id="CoinBot">

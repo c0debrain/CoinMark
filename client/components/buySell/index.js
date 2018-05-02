@@ -172,8 +172,7 @@ class BuySell extends Component {
     event.preventDefault();
     const coinType = $('#coinType').val(),
       coinAmount = $('#dare_price').val();
-    coinUSD = $('#total_price_amount').val();
-    Meteor.call('buyCoin', coinType, coinAmount, coinUSD, function(err, res) {
+    Meteor.call('buyCoin', coinType, coinAmount, function(err, res) {
       if (err) {
         console.log(JSON.stringify(err, null, 2));
       } else {
@@ -186,7 +185,7 @@ class BuySell extends Component {
     event.preventDefault();
     const coinType = $('#coinType').val(),
       coinAmount = $('#dare_price').val();
-    Meteor.call('buyCoin', coinType, -coinAmount, coinUSD, function(err, res) {
+    Meteor.call('buyCoin', coinType, -coinAmount, function(err, res) {
       if (err) {
         console.log(JSON.stringify(err, null, 2));
       } else {

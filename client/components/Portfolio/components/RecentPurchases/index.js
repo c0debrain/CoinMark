@@ -9,7 +9,7 @@ class RecentPurchases extends Component {
     Meteor.call('buys.remove', buy);
   }
   renderRows() {
-    return this.props.buys.map(buy => {
+    return this.props.buys.slice(-5).map(buy => {
       return (
         <tr key={buy._id}>
           <td>{buy.createdAt.toString()}</td>

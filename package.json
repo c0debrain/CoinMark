@@ -28,11 +28,13 @@
     "lodash.get": "4.4.2",
     "lodash.isequal": "4.5.0",
     "meteor-node-stubs": "^0.3.2",
+    "npm": "^6.0.0",
     "prop-types": "15.6.0",
     "react": "16.0.0",
     "react-dom": "16.0.0",
     "react-helmet": "5.2.0",
     "react-scripts": "1.0.10",
+    "react-table": "^6.8.2",
     "serve": "6.1.0"
   },
   "devDependencies": {

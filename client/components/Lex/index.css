@@ -44,7 +44,9 @@ p.lexError {
 }
 p {
   text-align: center;
+  font-size: 120% !important;
 }
 img {
   width: 15%;
+  height: 15%;
 }

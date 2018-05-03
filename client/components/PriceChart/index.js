@@ -96,7 +96,7 @@ class PriceChart extends Component {
     const { data, color } = this.props;
 
     return (
-      <div className="PriceChart">
+      <div className="PriceChart" onMouseLeave={this.hideHoverElements}>
         <div>
           <HoverContainer
             top
